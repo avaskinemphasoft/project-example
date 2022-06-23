@@ -1,0 +1,57 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "node": true,
+    "es2021": true,
+    "browser": true,
+    "commonjs": true
+  },
+  "plugins": ["import", "react", "prettier", "@typescript-eslint"],
+  "extends": [
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended"
+  ],
+  "rules": {
+    "curly": "error",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-restricted-imports": ["error", {
+      "patterns": [".*", "..*"]
+    }],
+    "prettier/prettier": ["error", {
+      "semi": true,
+      "printWidth": 100,
+      "singleQuote": true,
+      "arrowParens": "always",
+      "trailingComma": "es5",
+      "bracketSpacing": true,
+      "jsxSingleQuote": false,
+      "bracketSameLine": false
+    }]
+  },
+  "overrides": [
+    {
+      // disable the rule specifically for Saga TypeScript files
+      "files": ["*aga.ts"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
