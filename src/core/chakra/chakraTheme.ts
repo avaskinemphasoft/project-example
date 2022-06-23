@@ -2,9 +2,6 @@ import { extendTheme } from '@chakra-ui/react';
 import { createBreakpoints } from '@chakra-ui/theme-tools';
 
 export default extendTheme({
-  /*
-    everything should be SYNC up with https://www.figma.com/file/N8xUFYN885SNJDOzVQUdDI/GameCar_final?node-id=2%3A40975
-  */
   styles: {
     global: {
       // body: {
